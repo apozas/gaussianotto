@@ -35,6 +35,6 @@ The simulations we run are those that appear in the figures and discussions of t
   
   - [ottocycle](https://github.com/apozas/gaussianotto/blob/master/ottocycle.m): models an Otto cycle between a hot and a cold bath, computing the energetics of the cycle (work output, heat loss and efficiency). This code is used for creating Fig. 4 in the manuscript.
   
-  - [singlebath](https://github.com/apozas/gaussianotto/blob/master/singlebath.m): models the interaction of the machine with a single heat bath, and computes the temperature of the machine, its athermality, and different mutual informations during the joint evolution. This code is used for creating Fig. 1 in the manuscript.
+  - [singlebath](https://github.com/apozas/gaussianotto/blob/master/singlebath.m): models the interaction of the machine with a single heat bath, and computes the temperature of the machine, its athermality, and different mutual informations during the joint evolution. This code is used for creating Figs. 1 and 7 in the manuscript.
 
   - [temperature](https://github.com/apozas/gaussianotto/blob/master/temperature.m): models the interaction of the machine with a single heat bath, and computes the temperature of the machine. This code is used for creating Fig. 2 in the manuscript.
