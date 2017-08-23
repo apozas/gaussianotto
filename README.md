@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/100956997.svg)](https://zenodo.org/badge/latestdoi/100956997)
+
 ## Code to accompany *[A quantum Otto engine with finite heat baths: energy, correlations and degradation](https://arxiv.org/abs/1708.06363)*
 #### Alejandro Pozas-Kerstjens, Karen V. Hovhannisyan, and Eric G. Brown
 
