@@ -1,4 +1,4 @@
-%   Code used for creating Fig. 4 in arXiv:
+%   Code used for creating Fig. 4 in arXiv:1708.06363
 %   Runs an Otto cycle between two baths of harmonic oscillators, computing
 %   the work output after every interaction, the heat loss at every cycle,
 %   and the efficiency of the machine after every cycle.
@@ -55,7 +55,7 @@ dt = 0.01/OmH;
 
 % Set of bath modes with which the machine interacts
 interactC = [1];
-interactH = interactC;
+interactH = NC + interactC;
 
 % -------------------------------------------------------------------------
 % Computations
@@ -80,7 +80,7 @@ lambda = Switching(t,delta);
 
 % Compute the symplectic evolution matrix for both bath interactions.
 SC = MakeStimeIndep(NC+NH,OmC,strengthC,interactC,t,delta,lambda,blkdiag(FfreeC,FfreeH));
-SH = MakeStimeIndep(NC+NH,OmH,strengthH,interactH+NC,t,delta,lambda,blkdiag(FfreeC,FfreeH));
+SH = MakeStimeIndep(NC+NH,OmH,strengthH,interactH,t,delta,lambda,blkdiag(FfreeC,FfreeH));
 
 % Begin cyclic operation
 workAdiabatic   = zeros(1,2*Ncycle);  % Work output during adiabats
@@ -123,11 +123,14 @@ for i=1:Ncycle
 	efficiency(i) = workcycle(i) / Q(i);
 end
 
-% Work output in each isochore+adiabat (Figures 4a, 4b)
+% -------------------------------------------------------------------------
+% Plots
+% -------------------------------------------------------------------------
+% Work output in each adiabat (Figures 4a, 4b)
 figure(1)
 bar(workAdiabatic)
 xlabel('Interaction')
-ylabel('Work per interaction')
+ylabel('Work per quench')
 
 % Cumulative work output
 figure(2)

@@ -1,4 +1,4 @@
-%   Code used for creating Figs. 1 and 7 in arXiv:
+%   Code used for creating Figs. 1 and 7 in arXiv:1708.06363
 %   Models the interaction between a harmonic oscillator machine and a ring
 %   of harmonic oscillators initialized in a thermal state. During the
 %   interaction the temperature of the machine, its athermality, and three
@@ -86,12 +86,12 @@ end
 
 % Computation of mutual informations.
 % We look at quantities every 100 time steps.
-nth           = length(t)/100;
-MutInfdetbath = zeros(nth,1); % MI between machine and bath
-MutInfdetosc  = zeros(nth,1); % MI between machine and interacting mode
-MutInfoscrest = zeros(nth,1); % MI between interacting mode and the rest
+nt            = floor(length(t)/100);
+MutInfdetbath = zeros(nt,1); % MI between machine and bath
+MutInfdetosc  = zeros(nt,1); % MI between machine and interacting mode
+MutInfoscrest = zeros(nt,1); % MI between interacting mode and the rest
 
-for i=1:nth
+for i=1:nt
     % Compute evolved state
     sig = S(:,:,100*i-99)*sigI*S(:,:,100*i-99)';
     
@@ -108,12 +108,15 @@ for i=1:nth
                       -Entropy(sigComb);
 end
 
+% -------------------------------------------------------------------------
+% Plots
+% -------------------------------------------------------------------------
 % Various correlations and temperature (Figure 1)
 figure(1)
-plot(linspace(1,t(end),nth),MutInfdetbath)
+plot(linspace(1,t(end),nt),MutInfdetbath)
 hold on
-plot(linspace(1,t(end),nth),MutInfdetosc,'k')
-plot(linspace(1,t(end),nth),MutInfoscrest,'r')
+plot(linspace(1,t(end),nt),MutInfdetosc,'k')
+plot(linspace(1,t(end),nt),MutInfoscrest,'r')
 plot(t,Teff,'g-')
 hold off
 legend('Machine-Bath','Machine-Osc','Osc-Rest','T_{eff}','Location','east')

@@ -1,4 +1,4 @@
-%   Code used for creating Figs. 5 and 6 in arXiv:
+%   Code used for creating Figs. 5 and 6 in arXiv:1708.06363
 %   Runs an Otto cycle between two baths of harmonic oscillators, computing
 %   the mutual information between the machine oscillator and each of the
 %   oscillators in the baths, the mutual information between the machine
@@ -57,7 +57,7 @@ dt = 0.01/OmH;
 
 % Set of bath modes with which the machine interacts
 interactC = [floor(NC/2)];
-interactH = interactC;
+interactH = NC + interactC;
 
 % -------------------------------------------------------------------------
 % Computations
@@ -82,11 +82,11 @@ lambda = Switching(t,delta);
 
 % Compute the symplectic evolution matrix for both bath interactions.
 SC = MakeS(NC+NH,OmC,strengthC,interactC,t,delta,lambda,blkdiag(FfreeC,FfreeH));
-SH = MakeS(NC+NH,OmH,strengthH,interactH+NC,t,delta,lambda,blkdiag(FfreeC,FfreeH));
+SH = MakeS(NC+NH,OmH,strengthH,interactH,t,delta,lambda,blkdiag(FfreeC,FfreeH));
 
 % Computation of mutual informations.
 % We look at quantities every 100 time steps.
-ntH           = length(t)/100;
+ntH           = floor(length(t)/100);
 ntC           = ntH;
 MutInf        = zeros(NC+NH,ntH+ntC,Ncycle);
 MutInfTotal   = zeros(Ncycle,ntH+ntC);
@@ -151,6 +151,9 @@ for cyc=1:Ncycle
     sigI = SC(:,:,end)*sigI*SC(:,:,end)';
 end
 
+% -------------------------------------------------------------------------
+% Plots
+% -------------------------------------------------------------------------
 % Total mutual information
 figure(1)
 plot(linspace(1,Ncycle*2*t(end),Ncycle*(ntC+ntH)),reshape(MutInfTotal',Ncycle*(ntC+ntH),1))

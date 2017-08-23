@@ -1,4 +1,4 @@
-%   Code used for creating Fig. 2 in arXiv:
+%   Code used for creating Fig. 2 in arXiv:1708.06363
 %   Models the interaction between a harmonic oscillator machine and a ring
 %   of harmonic oscillators initialized in a thermal state. After the
 %   interaction the effective temperature of the machine is computed.
@@ -68,6 +68,9 @@ for n=1:length(N)
     end
 end
 
+% -------------------------------------------------------------------------
+% Plots
+% -------------------------------------------------------------------------
 % Temperature vs. size and interaction time (Figure 2)
 figure(1)
 imagesc(N,tf,Teff)
