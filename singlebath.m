@@ -43,7 +43,7 @@ delta = 0.1*tf;
 
 % Time steps for numerical integrations; must be very small
 % compared to inverse detector frequency
-dt = 0.01/Om;
+dt = 0.01;
 
 % Set of bath modes with which the machine interacts
 interact = [1];
