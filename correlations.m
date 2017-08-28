@@ -5,10 +5,10 @@
 %   oscillator and the complete bath, and between every pair of oscillators
 %   in the baths, for a number of interaction cycles.
 %   Variables with a C or H at the end refer to the parameters used for the
-%	hot bath (H) and the cold bath (C).
+%   hot bath (H) and the cold bath (C).
 % 
 %   authors:     Alejandro Pozas-Kerstjens, Karen V. Hovhanissyan,
-%				 Eric G. Brown
+%		 Eric G. Brown
 %
 %   requires:    -
 %
@@ -53,7 +53,7 @@ delta = 0.1*tf;
 
 % Time steps for numerical integrations; must be very small
 % compared to inverse detector frequency
-dt = 0.01/OmH;
+dt = 0.01;
 
 % Set of bath modes with which the machine interacts
 interactC = [floor(NC/2)];
@@ -67,9 +67,9 @@ FfreeC = FreeRing(NC,freqsC,alphaC);
 FfreeH = FreeRing(NH,freqsH,alphaH);
 
 % Initial detector state
-% We start by interacting with the hot bath, assuming that the
-% detector has frequency Om2 and is at the cold temperature
-sigDetI = eye(2)*(exp(OmH/TC)+1)/(exp(OmH/TC)-1);
+% We start by interacting with the hot bath, assuming that the WM is in a
+% state thermal with the cold bath
+sigDetI = eye(2)*(exp(OmC/TC)+1)/(exp(OmC/TC)-1);
 
 % Initialize global state of the system (detector plus two baths)
 sigI = blkdiag(sigDetI,Initialize(NC,TC,FfreeC),Initialize(NH,TH,FfreeH));
