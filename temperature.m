@@ -4,7 +4,7 @@
 %   interaction the effective temperature of the machine is computed.
 % 
 %   authors:     Alejandro Pozas-Kerstjens, Karen V. Hovhanissyan,
-%				 Eric G. Brown
+%		 Eric G. Brown
 %
 %   requires:    -
 %
@@ -28,6 +28,7 @@ N = floor(linspace(2,20,19));
 
 % Time of interaction with the bath; must be at least 2*delta
 tf = linspace(1,200,200);    
+dt = 0.01;
 
 % Set of bath modes with which the machine interacts
 interact = [1];
@@ -53,15 +54,14 @@ for n=1:length(N)
         % Initialize global (machine+bath) state
         sigI = blkdiag(sigDetI,Initialize(N(n),Tb,Ffree));
         %Initialize time steps for numerical integrations
-        dt      = 0.01/Om;
-		steps   = floor(tf(time)/dt);
+	steps   = floor(tf(time)/dt);
         dt      = tf(time)/steps;    % Recompute to account for rounding
         t       = linspace(0,tf(time),steps);
         lambda  = Switching(t,delta);
         S       = MakeStimeIndep(N(n),Om,strength,interact,t,delta,lambda,Ffree);
         sigF    = S*sigI*S';
         sigDetF = sigF(1:2,1:2);
-		eigen   = sort(eigs(sigDetF));
+	eigen   = sort(eigs(sigDetF));
         nu      = sqrt(eigen(1)*eigen(2));
         
         Teff(time,n) = Om/(log((nu+1)/(nu-1)));
