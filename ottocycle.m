@@ -130,7 +130,7 @@ end
 figure(1)
 bar(workAdiabatic)
 xlabel('Interaction')
-ylabel('Work per quench')
+ylabel('Work per adiabat')
 
 % Cumulative work output
 figure(2)
