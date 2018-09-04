@@ -1,4 +1,4 @@
-%   Code used for creating Fig. 4 in arXiv:1708.06363
+%   Code used for creating Fig. 4 in New J. Phys. 20, 043034 (2018)
 %   Runs an Otto cycle between two baths of harmonic oscillators, computing
 %   the work output after every interaction, the heat loss at every cycle,
 %   and the efficiency of the machine after every cycle.

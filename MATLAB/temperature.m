@@ -1,4 +1,4 @@
-%   Code used for creating Fig. 2 in arXiv:1708.06363
+%   Code used for creating Fig. 2 in New J. Phys. 20, 043034 (2018)
 %   Models the interaction between a harmonic oscillator WM and a ring
 %   of harmonic oscillators initialized in a thermal state. After the
 %   interaction the effective temperature of the WM is computed.

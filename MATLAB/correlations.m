@@ -1,4 +1,4 @@
-%   Code used for creating Figs. 5 and 6 in arXiv:1708.06363
+%   Code used for creating Figs. 5 and 6 in New J. Phys. 20, 043034 (2018)
 %   Runs an Otto cycle between two baths of harmonic oscillators, computing
 %   the mutual information between the machine oscillator and each of the
 %   oscillators in the baths, the mutual information between the machine

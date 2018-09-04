@@ -1,4 +1,4 @@
-%   Code used for creating Figs. 1 and 7 in arXiv:1708.06363
+%   Code used for creating Figs. 1 and 7 in New J. Phys. 20, 043034 (2018)
 %   Models the interaction between a harmonic oscillator WM and a ring
 %   of harmonic oscillators initialized in a thermal state. During the
 %   interaction the temperature of the WM, its athermality, and three

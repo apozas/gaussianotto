@@ -1,9 +1,9 @@
 [![DOI](https://zenodo.org/badge/100956997.svg)](https://zenodo.org/badge/latestdoi/100956997)
 
-## Code to accompany *[A quantum Otto engine with finite heat baths: energy, correlations and degradation](https://arxiv.org/abs/1708.06363)*
+## Code to accompany *[A quantum Otto engine with finite heat baths: energy, correlations and degradation](https://dx.doi.org/10.1088/1367-2630/aaba02)*
 #### Alejandro Pozas-Kerstjens, Karen V. Hovhannisyan, and Eric G. Brown
 
-This is a repository for all code which was written for the article "*A quantum Otto engine with finite heat baths: energy, correlations and degradation*. Alejandro Pozas-Kerstjens, Karen V. Hovhannisyan, and Eric G. Brown. [arXiv:1708.06363 [quant-ph]](https://arxiv.org/abs/1708.06363)."
+This is a repository for all code which was written for the article "*A quantum Otto engine with finite heat baths: energy, correlations and degradation*. Alejandro Pozas-Kerstjens, Karen V. Hovhannisyan, and Eric G. Brown. [New Journal of Physics 20, 043034 (2018)](https://dx.doi.org/10.1088/1367-2630/aaba02)."
 
 All code is written both in MATLAB and Python. The MATLAB version requires no additional toolboxes, and the Python version requires NumPy, SciPy and Matplotlib.
 
